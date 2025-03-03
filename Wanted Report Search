@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search User</title>
+    <style>
+        body {
+            background-color: #18191c;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        #search-container {
+            margin: 20px auto;
+            width: 50%;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid white;
+            background-color: #2c2f33;
+            color: white;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #7289da;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        #results {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .embed-box {
+            background-color: #2c2f33;
+            border-left: 4px solid #7289da;
+            border-radius: 8px;
+            padding: 15px;
+            width: 60%;
+            text-align: left;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            margin-top: 10px;
+        }
+
+        .embed-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .embed-description {
+            font-size: 16px;
+            color: #b9bbbe;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Search User</h1>
+
+    <div id="search-container">
+        <input type="text" id="search-bar" placeholder="Search for a user...">
+        <button onclick="search()">Search</button>
+        <br>
+        <a href="add_user.html"><button>Add New User</button></a>
+    </div>
+
+    <div id="results"></div>
+
+    <script>
+        function search() {
+            let query = document.getElementById("search-bar").value.toLowerCase();
+            let resultsDiv = document.getElementById("results");
+
+            resultsDiv.innerHTML = ""; // Clear previous results
+
+            let storedData = JSON.parse(localStorage.getItem("userData")) || {};
+
+            if (storedData[query]) {
+                let user = storedData[query];
+                resultsDiv.innerHTML = `
+                    <div class="embed-box">
+                        <div class="embed-title">🔍 Search Result: ${user.username}</div>
+                        <div class="embed-description">
+                            <span class="highlight">Username:</span> ${user.username}<br>
+                            <span class="highlight">Reason:</span> ${user.reason}<br>
+                            <span class="highlight">Details:</span> ${user.details}
+                        </div>
+                    </div>
+                `;
+            } else {
+                resultsDiv.innerHTML = `
+                    <div class="embed-box">
+                        <div class="embed-title">❌ No Results Found</div>
+                        <div class="embed-description">No results found for "<b>${query}</b>". Try another search or <a href="add_user.html" style="color: #7289da;">add a new user</a>.</div>
+                    </div>
+                `;
+            }
+        }
+    </script>
+
+</body>
+</html>
