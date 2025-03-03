@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+    <style>
+        body {
+            background-color: #18191c;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        #add-container {
+            margin: 20px auto;
+            width: 50%;
+        }
+
+        input, textarea {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid white;
+            background-color: #2c2f33;
+            color: white;
+            border-radius: 5px;
+            outline: none;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #7289da;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Add a New User</h1>
+
+    <div id="add-container">
+        <input type="text" id="new-username" placeholder="Username">
+        <input type="text" id="new-reason" placeholder="Reason">
+        <textarea id="new-details" placeholder="Details"></textarea>
+        <button onclick="addUser()">Add User</button>
+        <br>
+        <a href="search.html"><button>Go to Search</button></a>
+    </div>
+
+    <script>
+        function addUser() {
+            let username = document.getElementById("new-username").value.trim();
+            let reason = document.getElementById("new-reason").value.trim();
+            let details = document.getElementById("new-details").value.trim();
+
+            if (username === "" || reason === "" || details === "") {
+                alert("Please fill in all fields before adding a user.");
+                return;
+            }
+
+            let usernameKey = username.toLowerCase(); // Normalize for search
+            let storedData = JSON.parse(localStorage.getItem("userData")) || {};
+
+            storedData[usernameKey] = { username, reason, details };
+
+            localStorage.setItem("userData", JSON.stringify(storedData));
+
+            alert(`User "${username}" has been added successfully!`);
+            document.getElementById("new-username").value = "";
+            document.getElementById("new-reason").value = "";
+            document.getElementById("new-details").value = "";
+        }
+    </script>
+
+</body>
+</html>
