@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact & Support</title>
+  <link rel="stylesheet" href="styles.css">
+    <!-- Animate on Scroll Library -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({ duration: 1000 });
+  });
+</script>
+    
+</head>
+<body>
+  <header>
+    <h1>Contact & Support</h1>
+    <nav>
+      <a href="index.html">About</a>
+      <a href="games.html">Games</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card" data-aos="fade-right">
+
+      <h2>Join Our Discord</h2>
+      <p>Stay updated, chat with the devs, and be part of the community!</p>
+      <a href="https://discord.gg/yourserver" target="_blank" class="btn">Join Discord</a>
+    </section>
+
+    <section class="card" data-aos="fade-right">
+
+      <h2>Report a Bug</h2>
+      <p>If you found a bug in one of our games, please let us know by filling out this form:</p>
+      <form action="https://example.com/submit-bug" method="POST">
+        <input type="text" name="username" placeholder="Your Roblox Username" required>
+        <textarea name="bug" placeholder="Describe the bug..." required></textarea>
+        <button type="submit" class="btn">Submit Bug Report</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
