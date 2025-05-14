@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <title>Anime Studio - Our Games</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Animate on Scroll Library -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({ duration: 1000 });
+  });
+</script>
+  
 </head>
 <body>
   <header>
@@ -16,7 +25,8 @@
   </header>
 
   <main class="container">
-    <section class="card">
+    <section class="card" data-aos="fade-up">
+
       <h2>Featured Games</h2>
       <ul>
         <li><strong>Anime Slayer X</strong> – Fight your way through anime-inspired worlds.</li>
@@ -24,7 +34,8 @@
       </ul>
     </section>
 
-    <section class="card">
+    <section class="card" data-aos="fade-up">
+
       <h2>Promo Codes</h2>
       <ul>
         <li><code>SLAY2025</code> – Free 500 Coins</li>
@@ -32,7 +43,8 @@
       </ul>
     </section>
 
-    <section class="card">
+    <section class="card" data-aos="fade-up">
+
       <h2>Badges</h2>
       <img src="badge1.png" alt="Badge 1" class="badge-img">
       <img src="badge2.png" alt="Badge 2" class="badge-img">
