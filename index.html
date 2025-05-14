@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <title>Anime Studio - About Us</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Animate on Scroll Library -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({ duration: 1000 });
+  });
+</script>
+  
 </head>
 <body>
   <header>
@@ -16,7 +25,7 @@
   </header>
 
   <main class="container">
-    <section class="card">
+    <section class="card" data-aos="fade-up">
       <h2>About Our Studio</h2>
       <p>We are a group of passionate developers creating immersive anime-style games on Roblox. Our goal is to bring thrilling experiences inspired by your favorite anime worlds.</p>
       <p>Join us on our mission to build the most engaging and unique games in the Roblox universe.</p>
