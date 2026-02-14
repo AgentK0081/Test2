@@ -8,7 +8,7 @@ import { setTheme } from "./theme.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
 
-    setTheme("white"); // Change to "gold" anytime
+    setTheme("gold"); // Change to "gold" anytime
 
     initTabs();
 
