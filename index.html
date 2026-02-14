@@ -1,35 +1,65 @@
+<!-- /index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Anime Studio - About Us</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- Animate on Scroll Library -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    AOS.init({ duration: 1000 });
-  });
-</script>
-  
+    <meta charset="UTF-8">
+    <title>FBI TEAM ROBLOX</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <h1>Anime Game Studio</h1>
-    <nav>
-      <a href="index.html">About</a>
-      <a href="games.html">Games</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
 
-  <main class="container">
-    <section class="card" data-aos="fade-up">
-      <h2>About Our Studio</h2>
-      <p>We are a group of passionate developers creating immersive anime-style games on Roblox. Our goal is to bring thrilling experiences inspired by your favorite anime worlds.</p>
-      <p>Join us on our mission to build the most engaging and unique games in the Roblox universe.</p>
-    </section>
-  </main>
+<button id="adminBtn" class="admin-btn">Admin Login</button>
+
+<section class="hero">
+    <h1>FBI TEAM ROBLOX</h1>
+    <p>Official Website</p>
+</section>
+
+<nav class="tabs">
+    <button data-tab="information" class="tab active">Information</button>
+    <button data-tab="divisions" class="tab">Divisions</button>
+    <button data-tab="players" class="tab">Players</button>
+    <button data-tab="wanted" class="tab">Wanted</button>
+</nav>
+
+<main>
+
+<section id="information" class="tab-content active">
+    <h2>Mission Brief</h2>
+    <p>Elite tactical operations group.</p>
+    <p>Active Members: <span id="memberCount">0</span></p>
+</section>
+
+<section id="divisions" class="tab-content">
+    <h2>Divisions</h2>
+    <div id="divisionsGrid" class="grid"></div>
+</section>
+
+<section id="players" class="tab-content">
+    <h2>Players</h2>
+    <input id="playerSearch" placeholder="Search...">
+    <table>
+        <thead>
+        <tr>
+            <th>Callsign</th>
+            <th>Username</th>
+            <th>Rank</th>
+            <th>Division</th>
+        </tr>
+        </thead>
+        <tbody id="playersTable"></tbody>
+    </table>
+</section>
+
+<section id="wanted" class="tab-content">
+    <h2>Wanted</h2>
+    <div id="wantedGrid" class="grid"></div>
+</section>
+
+</main>
+
+<script type="module" src="js/app.js"></script>
 </body>
 </html>
